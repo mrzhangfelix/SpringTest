@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd"
+        >
+
+    <!--<bean-->
+            <!--class ="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>-->
+
+    <!--<bean id="helloBean" class="com.felix.HelloWorld" init-method="start" destroy-method="stop">-->
+    <bean id="helloBean" class="com.felix.HelloWorld">
+    <property name="name" value="zhangpengfei" />
+    </bean>
+
+    <bean id="FelixAppContext" class="com.felix.aware.FelixAppContext"></bean>
+
+    <bean id="CustomerBean" class="com.felix.common.Customer" >
+        <property name="person" ref="Person2"></property>
+        <!--<property name="person" ref="PersonBean2"/>-->
+        <property name="action" value="buy" />
+        <property name="type" value="1" />
+    </bean>
+
+    <bean id="Person" class="com.felix.common.Person">
+        <property name="name" value="zpf" />
+        <property name="address" value="address ABC" />
+        <property name="age" value="29"/>
+    </bean>
+
+    <bean id="Person2" class="com.felix.common.Person">
+        <property name="name" value="zpf2" />
+        <property name="address" value="address2" />
+        <property name="age" value="29"/>
+    </bean>
+</beans>
+
+
+
+
+
+
